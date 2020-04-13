@@ -9,6 +9,7 @@
 .side-bar {
   width: 300px;
   background-color: #2f3e51;
+  color: white;
 }
 
 .side-header{
@@ -16,15 +17,14 @@
   height: 100px;
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
 .side-box{
-  height: 20px;
-  width: 260px;
-  margin: 0 20px;
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  width: 100%;
+  font-weight: bold; 
 }
 
 
@@ -35,31 +35,27 @@
   width: 60px;
   display: flex;
   align-items: center;
+  .side-box .user-name {
+    font-size: 16px;
+  } 
 }
 
-.side-box .user-name {
-  color: #ffffff;
-  font-size: 16px;
-  
-}
 
 .side-box .icon-box {
   color: #ffffff;
   display: flex;
   list-style: none;
+  a {
+    text-decoration: none;
+    color: #333333;
+    display: none;
+  }
 }
 
 .icon-box .icon-edit {
   margin: 0 0 0 auto;
   margin-right: 5px;
 }
-
-a {
-  text-decoration: none;
-  color: #333333;
-}
-
-
 
 .groups{
     height: calc(100vh - 100px);
@@ -120,6 +116,7 @@ margin-bottom: 5px;
 .main-header__left-box__member-list__member{
   margin: 0;
   padding: 0;
+  display: none;
 }
 
 .main-header__edit-btn{
@@ -133,33 +130,47 @@ margin-bottom: 5px;
     right: 40px;
 }
 
-.masseges{
+.messages{
   height: calc(100vh - 190px);
   padding: 46px 40px;
   background-color: #fafafa;
   overflow: scroll;
+  .message{
+    padding-bottom: 40px;
+    &__upper-info{
+      display: flex;
+      margin-bottom: 10px;
+      &__talker{
+       color: #434a54;
+       font-size: 16px;
+      font-weight: bold;
+      }
+      &__date{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+     }
+    }
+  }
 }
 
-.massege{
-padding-bottom: 40px;
-}
 
-.message__upper-info{
-  display: flex;
-  margin-bottom: 10px;
-}
+// .message__upper-info{
+//   display: flex;
+//   margin-bottom: 10px;
+// }
 
-.message__upper-info__talker{
-  color: #434a54;
-  font-size: 16px;
-  font-weight: bold;
-}
+// .message__upper-info__talker{
+//   color: #434a54;
+//   font-size: 16px;
+//   font-weight: bold;
+// }
 
-.message__upper-info__date{
-  color: #999999;
-  font-size: 12px;
-  margin-left: 10px;
-}
+// .message__upper-info__date{
+//   color: #999999;
+//   font-size: 12px;
+//   margin-left: 10px;
+// }
 
 .message__text{
   color: #434a54;

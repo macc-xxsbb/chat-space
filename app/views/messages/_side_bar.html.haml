@@ -1,47 +1,19 @@
-
 %html
- %body
-  .side-bar
-   .side-header
-    .side-box
-     %p.user-name masa
-     %ul.icon-box
-      %li.icon-edit
-       -#  %a.(href = "#")
-       %i.fa.fa-edit 
-      %li.icon-cog
-       -#  %a.(href = "#")
-       %i.fa.fa-cog
-   .groups
-    .group
-     %p.group-name masa
-     %p.group-message まだメッセージがありません
-  .main
-   .main-header
-    .main-left-box
-     %h2.main_left-box_current-group
-      masa
-     %lu.main-header__left-box__member-list
-      Member：
-      %li.main-header__left-box__member-list__member
-       masa
-    -# %a.(href = "#")
-    .main-header__edit-btn
-     Edit
-   .masseges
-    .massege
-     .message__upper-info
-      %p.message__upper-info__talker
-       masa 
-      %p.message__upper-info__date
-       2020/04/11(Sat) 16:46:47
-     %p.message__text
-      yabatann
-   .form  
-    %form.new-message#new-message
-     .input-box
-      %input.massege_content.input-box_text{ :placeholder => "type a message", :type => "text"}
-       %label.input-box_image
-        = icon('fas', 'image')
-        %input{type: "file"}
-     %input.submit-btn{:value =>"Send"}
+  %body  
+    .side-bar
+      .side-header
+        .side-box
+          %p.user-name 
+            masa
+          %ul.icon-box
+            %li.icon-edit
+            = link_to '#'
+            %i.fa.fa-edit 
+            %li.icon-cog
+            = link_to '#'
+            %i.fa.fa-cog
+      .groups
+        .group
+          %p.group-name masa
+          %p.group-message まだメッセージがありません
+  
