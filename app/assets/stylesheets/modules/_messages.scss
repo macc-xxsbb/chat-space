@@ -43,14 +43,18 @@
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
       .group{
       margin-bottom: 40px;
-      color: #ffffff;
-        .group-name{
+      
+        &__name{
         font-size: 15px;
         margin-bottom: 5px;
         }
-        .group-message{
+        &__message{
         font-size: 11px;
         }
       }
