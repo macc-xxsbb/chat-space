@@ -1,28 +1,25 @@
-.main
-  .main-header
-    .main-header__left-box
-      %h2.main-header__left-box__current-group
-        masa
-      %lu.main-header__left-box__member-list
-        Member：
-        %li.main-header__left-box__member-list__member 
-          masa
-    .main-header__edit-btn
-      Edit
-  .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker
-          masa 
-        %p.message__upper-info__date
-          2020/04/11(Sat) 16:46:47
-      .message__text
-        yabatann
-  .form  
-    %form.new-message#new-message
-      .input-box
-        %input.massege_content.input-box_text{ placeholder: "type a message", type: "text"}
-          %label.input-box_image
-            = icon('fas', 'image')
-            %input{type: "file"}
-      %input.submit-btn{value: "Send"}
+%html
+  %body     
+    .main
+      .main-header
+        .main-header__left-box
+          %h2.main-header__left-box__current-group
+            = @group.name
+          %lu.main-header__left-box__member-list
+            Member：
+            %li.main-header__left-box__member-list__member 
+              - @group.users.each do |user|
+                = user.name
+        .main-header__edit-btn
+          = link_to edit_group_path (@group.id) do
+            Edit  
+      .messages
+        = render @messages
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask  
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
